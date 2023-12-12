@@ -1,0 +1,20 @@
+{{define "index"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello, World!</title>
+    <script src="https://unpkg.com/htmx.org@1.9.5" integrity="sha384-xcuj3WpfgjlKF+FXhSQFQ0ZNr39ln+hwjN3npfM9VBnUskLolQAcN80McRIVOPuO" crossorigin="anonymous"></script>
+</head>
+<body>
+    <p>Olá, Mundo!</p>
+    <div id="user-info">
+        <p>{{.Name}}</p>
+        <button hx-get="/get-info" hx-target="#user-info" hx-swap="innerHTML">
+            Revelar Informações Pessoais do Usuário
+        </button>
+    </div>
+</body>
+</html>
+{{end}}
